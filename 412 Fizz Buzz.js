@@ -11,7 +11,6 @@ const fizzBuzz = function(n) {
       ? 'Fizz' : num % 5 == 0
       ? 'Buzz' : String(num) 
   
-
   while(i < n) {
     arr[i] = trans(i++ + 1)
     arr[--n] = trans(n + 1)
