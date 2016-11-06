@@ -5,5 +5,5 @@
  * @return {boolean}
  */
 var canWinNim = function(n) {
-    return n % 4
+    return n % 4 != 0
 }
