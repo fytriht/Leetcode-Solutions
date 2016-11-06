@@ -3,14 +3,13 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
- 
-  let result = '', y = x
+  
+  var result = '', y = x
   
   while (y > 0) {
     result += (y % 10)
     y = Math.floor(y / 10)
   }
-
   return  y > 0 || result == x
 };
 
