@@ -11,9 +11,11 @@
  * @param {ListNode} head
  * @param {number} n
  * @return {ListNode}
+ *
+ * Given 1->2->3->4->5, n = 2, return 1->2->3->5
  */
 var removeNthFromEnd = function(head, n) {
-  let arr = [], len
+  var arr = [], len
   
   if (!head.next)
     return []
@@ -22,11 +24,10 @@ var removeNthFromEnd = function(head, n) {
     arr.push(head)
     head = head.next
   }
-  
   len = arr.length
+  
   if (n == len)
     return arr[1]
-  
   arr[len - n - 1].next = arr[len - n].next
   
   return arr[0]
