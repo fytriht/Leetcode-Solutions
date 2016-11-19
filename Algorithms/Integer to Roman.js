@@ -8,12 +8,9 @@
  */
 
 var intToRoman = function(num) {
-  
   var hash = [1,5,10,50,100,500,1000]
   var vals = ['I','V','X','L','C','D','M']
-
   var arr = [], result = '', r
-
   // if num=2273, result in arr=[3,7,2,2]
   while (num) {
     r = num % 10
@@ -21,24 +18,19 @@ var intToRoman = function(num) {
     num -= r
     num /= 10
   }
-
   for (i = arr.length - 1; i >= 0; i--) {
     result += digitToRoman(i, arr[i]) 
   }
-
   function digitToRoman(i, num) {
     var result = '', d
-
     if (num == 4) {
       return digitToRoman(i, 1) + digitToRoman(i, 5)
     }
     if (num == 9) {
       return digitToRoman(i, 1) + digitToRoman(i+1, 1)
     }
-    
     num *= Math.pow(10, i)
     d = 2 * (i + 1) - 1  
-
     if (hash[d] && num >= hash[d]) {
       result += vals[d]
       num -= hash[d]

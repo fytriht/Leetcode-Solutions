@@ -3,9 +3,7 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-  
   var result = '', y = x
-  
   while (y > 0) {
     result += (y % 10)
     y = Math.floor(y / 10)

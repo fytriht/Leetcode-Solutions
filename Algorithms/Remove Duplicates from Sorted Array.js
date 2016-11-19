@@ -7,7 +7,6 @@
  // [1,2,3,u,u,4,4,5]
 var removeDuplicates = function(nums) {
   var i, j, len = nums.length
-
   for(i = 0; i < len; i++) {
     j = i + 1
     if (nums[i] == undefined) {
@@ -18,7 +17,6 @@ var removeDuplicates = function(nums) {
       j++
     }
   }
-
   for(i = 0; i < len - 1; i++) {
     j = i
     if (nums[i] == undefined) {
@@ -27,7 +25,6 @@ var removeDuplicates = function(nums) {
       nums[j] = undefined
     }
   }
-
   for(i = 0, j = 0; i < nums.length; i++) {
     if (nums[i] == undefined)
       j++

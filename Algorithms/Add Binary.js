@@ -10,20 +10,19 @@
 var addBinary = function(a, b) {
   if (a.length < b.length)
     [a, b] = [b, a]
-  
   var arr = [''], 
       i = a.length,
       diff = a.length - b.length
-
   while (--i >= 0) {
-    if (!arr[i+1]) 
+    if (!arr[i+1]) {
       arr[i+1] = +(a[i])
-    else 
+    }
+    else {
       arr[i+1] += +(a[i])
-
-    if (i >= diff) 
+    }
+    if (i >= diff) {
       arr[i+1] += +(b[i-diff])
-    
+    }
     if (arr[i+1] >= 2) {
       arr[i+1] -= 2
       arr[i] = 1

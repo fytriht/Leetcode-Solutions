@@ -11,7 +11,6 @@ var longestCommonPrefix = function(strs) {
     return ''
   }
   var prefix = strs[0], len
-
   // find the string with shortest length.
   for (var str of strs) {
     if (str.length < prefix.lenght) {

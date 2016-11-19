@@ -9,7 +9,6 @@
 var climbStairs = function(n) {
   if (!n) return 0
   var a = 1, i = 0, counts = 1, temp
-
   while (++i < n) {
     temp = counts
     counts += a

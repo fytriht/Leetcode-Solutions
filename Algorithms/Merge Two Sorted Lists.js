@@ -6,13 +6,10 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(l1, l2) {
-
  // if l1.val > l2.val, switch l1 and l2
   if (l1 && l2 && l1.val > l2.val) 
     [l1, l2] = [l2, l1]
-
   var head = l1, temp
-
   while (l2 && l1) {
     if (!l1.next || l2.val < l1.next.val) {
       l2 = insertNode(l1, l2)
