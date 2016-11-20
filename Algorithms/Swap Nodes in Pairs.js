@@ -12,17 +12,13 @@
  * @return {ListNode}
  */
 var swapPairs = function(head) {
-
   // if  head=null, returnnull
   if (!head) 
     return null
-
   // if list=[head] return head
   if (!head.next) 
     return head
-
   var node = head, temp, temp1  
-  
   head = node.next
   while (node && node.next) {
     temp1 = null

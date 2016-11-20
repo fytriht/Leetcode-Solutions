@@ -16,10 +16,8 @@
  */
 var removeNthFromEnd = function(head, n) {
   var arr = [], len
-  
   if (!head.next)
     return []
-  
   while (head) {
     arr.push(head)
     head = head.next
@@ -29,6 +27,5 @@ var removeNthFromEnd = function(head, n) {
   if (n == len)
     return arr[1]
   arr[len - n - 1].next = arr[len - n].next
-  
   return arr[0]
 };

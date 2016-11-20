@@ -15,7 +15,6 @@
  */
 var deleteDuplicates = function(head) {
   if (!head) return []
-
   var node = head
   while (node && node.next) {
     while(node.next && node.next.val == node.val) {

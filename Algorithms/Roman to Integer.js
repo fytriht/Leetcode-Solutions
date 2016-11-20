@@ -12,7 +12,6 @@ var romanToInt = function(s) {
   // var map = new Map(hash)
   // 
   // Though intuitive, it seems use the above approach to defined a map is much slower.
- 
   var map = {
     'I': 1,
     'V': 5,
@@ -23,7 +22,6 @@ var romanToInt = function(s) {
     'M': 1000
   }
   var len = s.length, result = 0, cur, next
-
   for (var i = 0; i < len; i++) {
     cur = map[s[i]]
     next = map[s[i + 1]]
