@@ -9,10 +9,11 @@
 var hammingWeight = function(n) {
   var counts = 0
   while (n) {
-    if (n % 2 == 1) {
+    if (n % 2) {
       counts++
+      n -= 1
     }
-    n = (n - n % 2) / 2
+    n /= 2
   }    
   return counts
 };
