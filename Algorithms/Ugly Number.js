@@ -40,4 +40,4 @@ var isUgly = function(num) {
   return true
 };
 
-console.log(isUgly(15))
+// console.log(isUgly(15))
