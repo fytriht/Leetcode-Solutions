@@ -26,9 +26,7 @@ var generate = function(numRows) {
   }
   return result
 };
-console.log(generate(6))
-
-// // 6
+// console.log(generate(6))
 
 // [
 //         [1 ],
@@ -38,19 +36,3 @@ console.log(generate(6))
 //     [1 ,4 ,6 ,4 ,1 ],
 //    [1 ,5 ,10,10,5 ,1 ]
 // ]
-
-
-
-// function genRow(arr) {
-//   var row = [1]
-//   var temp
-//   for (i = 1; i < Math.round((arr.length +1) / 2) ; i++) {
-//     temp = arr[i-1] + arr[i]
-//     row[i] = temp
-//     row[arr.length - i] = temp
-//   }
-//   row.push(1)
-//   return row
-// }
-
-// console.log(genRow([1,3,3,1]))
