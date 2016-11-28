@@ -10,7 +10,7 @@ var arrangeCoins = function(n) {
   return Math.floor(-1/2 + Math.pow(1/4 + 2 * n, 1/2)) 
 };
 
-console.log(arrangeCoins(8))
+// console.log(arrangeCoins(8))
 
 // 1/2 * i^2 + 1/2 * i - n
 
