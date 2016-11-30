@@ -11,8 +11,7 @@ var getHint = function(secret, guess) {
     if (d == guess[i]) {
       bulls++
     } else {
-      hash[d] == undefined && (hash[d] = 0)
-      hash[d]++
+      hash[d] ? hash[d]++ : (hash[d] = 1)
     }
   })
   guess.split('').forEach((d, i) => {
@@ -23,6 +22,8 @@ var getHint = function(secret, guess) {
   })
   return `${bulls}A${cows}B`
 };
+
+
 
 console.log(getHint('1122', '0001'))
 
