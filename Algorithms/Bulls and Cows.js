@@ -5,27 +5,46 @@
  * @param {string} guess
  * @return {string}
  */
+// var getHint = function(secret, guess) {
+//   var hash = {}, bulls = 0, cows = 0
+//   secret.split('').forEach((d, i) => {
+//     if (d == guess[i]) {
+//       bulls++
+//     } else {
+//       hash[d] ? hash[d]++ : (hash[d] = 1)
+//     }
+//   })
+//   guess.split('').forEach((d, i) => {
+//     if (hash[d] && d != secret[i]) {
+//       cows++
+//       hash[d]--
+//     }
+//   })
+//   return `${bulls}A${cows}B`
+// };
+
 var getHint = function(secret, guess) {
-  var hash = {}, bulls = 0, cows = 0
-  secret.split('').forEach((d, i) => {
-    if (d == guess[i]) {
+  var hash = {}, bulls = 0, cows = 0, i = 0
+  while (i < secret.length) {
+    if (secret[i] == guess[i]) {
       bulls++
     } else {
-      hash[d] ? hash[d]++ : (hash[d] = 1)
-    }
-  })
-  guess.split('').forEach((d, i) => {
-    if (hash[d] && d != secret[i]) {
+      hash[secret[i]] || (hash[secret[i]] = 0)
+      hash[secret[i]]++
+    } 
+    i++
+  }
+  while (i >= 0) {
+    if (hash[guess[i]] && guess[i] != secret[i]) {
       cows++
-      hash[d]--
+      hash[guess[i]]--
     }
-  })
-  return `${bulls}A${cows}B`
-};
+    i--
+  }
+  return bulls + 'A' + cows + 'B'
+}
 
-
-
-console.log(getHint('1122', '0001'))
+console.log(getHint('1807', '7810'))
 
 // '1807', '7810' -> '1A3B'
 // {
