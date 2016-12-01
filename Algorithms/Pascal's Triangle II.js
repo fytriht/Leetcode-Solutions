@@ -5,21 +5,20 @@
  * @return {number[]}
  */
 var getRow = function(rowIndex) {
-  var result = [1], i = 0, j, temp
-  function recur(arr) {
+  var result = [1], i = 0, j
+  
+  return (function recur(arr) {
     if (i++ == rowIndex) {
       return arr
     }
     var row = [1]
     for (j = 1; j < Math.round((arr.length + 1) / 2); j++) {
-      temp = arr[j-1] + arr[j]
-      row[j] = temp
-      row[arr.length - j] = temp
+      row[j] = arr[j-1] + arr[j]
+      row[arr.length - j] = row[j]
     }
     row.push(1)
     return recur(row)
-  }
-  return recur(result)
+  })(result)
 };
 
 /*
@@ -27,7 +26,7 @@ var getRow = function(rowIndex) {
 */
 
 
-console.log(getRow(3))
+console.log(getRow(0))
 
 // [
 //         [1 ],
