@@ -6,10 +6,7 @@
  * @return {boolean}
  */
 var isIsomorphic = function(s, t) {
-  if (s.length == 0) {
-    return true
-  }
-  var hash = {}, hash1 = {}, i, len = s.length, result = []
+  var hash = {}, hash1 = {}, len = s.length, result = [], i
   for (i = 0; i < len; i++) {
     if (hash[s[i]] == undefined) {
       if (t[i] in hash1) {
@@ -24,9 +21,7 @@ var isIsomorphic = function(s, t) {
     }
     result[i] = t[i] 
   }
-  // return hash1
   return result.join('') == t
 };
 
-// console.log(isIsomorphic('title', 'paper')) // true
-console.log(isIsomorphic('ab', 'aa'))  // false
+console.log(isIsomorphic('', ''))  // false
