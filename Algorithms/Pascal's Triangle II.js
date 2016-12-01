@@ -8,16 +8,13 @@ var getRow = function(rowIndex) {
   var result = [1], i = 0, j
   
   return (function recur(arr) {
-    if (i++ == rowIndex) {
-      return arr
-    }
     var row = [1]
     for (j = 1; j < Math.round((arr.length + 1) / 2); j++) {
       row[j] = arr[j-1] + arr[j]
       row[arr.length - j] = row[j]
     }
     row.push(1)
-    return recur(row)
+    return i++ == rowIndex ? arr : recur(row)
   })(result)
 };
 
