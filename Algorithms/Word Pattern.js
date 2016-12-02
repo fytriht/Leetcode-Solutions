@@ -18,7 +18,7 @@ var wordPattern = function(pattern, str) {
   }
   for (i = 0; i < len; i++) {
     if (hash[pattern[i]] == undefined) {
-      if (hash1[arr[i]] in hash1) {
+      if (arr[i] in hash1) {
         return false
       }
       hash[pattern[i]] = arr[i]
