@@ -8,19 +8,15 @@
  * Given nums = [1,0,1,1]  k = 1, return true 
  */
 var containsNearbyDuplicate = function(nums, k) {
-  var hash = {}, minDiff = Number.MAX_VALUE , i
+  var hash = {}, i
 
   for (i = 0; i < nums.length; i++) {
-    if (hash[nums[i]] == undefined) {
-      hash[nums[i]] = i
-    } else {
-      if (i - hash[nums[i]] < minDiff) {
-        minDiff = i - hash[nums[i]]
-        hash[nums[i]] = i
-      }
+    if (i - hash[nums[i]] <= k) { // i - undefined <= k  -->  false
+      return true
     }
+    hash[nums[i]] = i
   }
-  return minDiff <= k
+  return false
 };
 
-// console.log(containsNearbyDuplicate([1,0,1,1], 1))
+console.log(containsNearbyDuplicate([1,0,1,1], 1))
