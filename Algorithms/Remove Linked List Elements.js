@@ -16,14 +16,8 @@
  * Return: 1 --> 2 --> 3 --> 4 --> 5
  */
 var removeElements = function(head, val) {
-  if (!head) {
-    return head
-  }
   while (head && head.val === val) {
     head = head.next
-  }
-  if (!head) {
-    return head
   }
   var node = head
   while (node && node.next) {
