@@ -19,7 +19,6 @@ var containsNearbyDuplicate = function(nums, k) {
         hash[nums[i]] = i
       }
     }
-
   }
   return minDiff <= k
 };
