@@ -18,14 +18,14 @@ var getIntersectionNode = function(headA, headB) {
 
   while (nodeA || nodeB) {
     if (nodeA) {
-      if (hash[nodeA.val]) {
+      if (hash[nodeA.val] != undefined) {
         return nodeA
       }
       hash[nodeA.val] = nodeA.val
       nodeA = nodeA.next
     }
     if (nodeB) {
-      if (hash[nodeB.val]) {
+      if (hash[nodeB.val] != undefined) {
         return nodeB
       }
       hash[nodeB.val] = nodeB.val
