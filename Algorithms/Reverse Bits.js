@@ -9,7 +9,7 @@
 var reverseBits = function(n) {
   var i = 0, s = 0
   while (n) {
-    if (n % 2 == 1) {
+    if (n % 2) {
       s += Math.pow(2, 31 - i)
     }
     n = (n - n % 2) / 2
@@ -19,7 +19,7 @@ var reverseBits = function(n) {
 };
 
 
-// reverseBits(0)
+console.log(reverseBits(43261596))
 
 // 11
 // 00111001011110000010100101000000
