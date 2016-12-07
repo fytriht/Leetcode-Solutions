@@ -7,15 +7,13 @@
  * Given n = 43261596, return 964176192
  */
 var reverseBits = function(n) {
-  var i = 0, s = 0
+  var i = 0, result = 0
   while (n) {
-    if (n % 2) {
-      s += Math.pow(2, 31 - i)
-    }
+    n % 2 && (result += Math.pow(2, 31-i))
     n = (n - n % 2) / 2
     i++
   }
-  return s
+  return result
 };
 
 
