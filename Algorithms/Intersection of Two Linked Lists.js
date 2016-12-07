@@ -14,22 +14,22 @@
  * @return {ListNode}
  */
 var getIntersectionNode = function(headA, headB) {
-  var hash = {}, nodeA = headA, nodeB = headB
+  var hash = {}
 
-  while (nodeA || nodeB) {
-    if (nodeA) {
-      if (hash[nodeA.val] != undefined) {
-        return nodeA
+  while (headA || headB) {
+    if (headA) {
+      if (hash[headA.val] != undefined) {
+        return headA
       }
-      hash[nodeA.val] = nodeA.val
-      nodeA = nodeA.next
+      hash[headA.val] = headA.val
+      headA = headA.next
     }
-    if (nodeB) {
-      if (hash[nodeB.val] != undefined) {
-        return nodeB
+    if (headB) {
+      if (hash[headB.val] != undefined) {
+        return headB
       }
-      hash[nodeB.val] = nodeB.val
-      nodeB = nodeB.next
+      hash[headB.val] = headB.val
+      headB = headB.next
     }
   }
   return null
