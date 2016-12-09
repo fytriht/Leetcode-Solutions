@@ -6,24 +6,23 @@
  */
 var countPrimes = function(n) {
   var i = 2, counts = 0
+  
   while (i < n) {
-    if (isPrime(i)) {
-      counts++
-    }
+    isPrime(i) && counts++
     i++
   }
   return counts
 };
 
 var isPrime = function(n) {
-  if (n == 2) {
+  if (n == 2) 
     return true
-  }
-  var m = Math.ceil(Math.sqrt(n)), i = 2
+  
+  var m = Math.ceil(Math.sqrt(n)), 
+      i = 2
+
   while (i <= m) {
-    if (n % i == 0) {
-      return false
-    }
+    if (n % i == 0) return false
     i++
   }
   return true
