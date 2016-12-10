@@ -9,13 +9,13 @@ var convert = function(s, numRows) {
   if (numRows == 1)  return s
 
   var i = 0, 
-      j = 0,
       result = '',
       step = 2 * (numRows - 1),
       len = s.length - 1        // 1 base length
 
   while (i < numRows) {
-    var row = ''
+    var row = '',
+        j = 0
     while ((-i + step * (j + 1)) <= len || (i + step * j) <= len) {
       if ((i + step * j) <= len) {
         row += s[i + step * j] // 0 
@@ -27,14 +27,13 @@ var convert = function(s, numRows) {
     }
     result += row
     i++
-    j = 0
   }
   return result
 };
 
  // beats 99.18% !
 
-console.log(convert('PAYPALISKJSDHKJDHSKDSHIRING', 2))
+console.log(convert('PAYPALISHIRING', 3))
 
 // 0P 1A 2Y 3P 4A 5L 6I 7S 8H 9I 10R 11I 12N 13G
 
