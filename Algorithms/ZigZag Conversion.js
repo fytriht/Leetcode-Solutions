@@ -16,7 +16,7 @@ var convert = function(s, numRows) {
   while (i < numRows) {
     var row = '',
         j = 0
-    while ((-i + step * (j + 1)) <= len || (i + step * j) <= len) {
+    while ((i + step * j) <= len) {
       if ((i + step * j) <= len) {
         row += s[i + step * j] // 0 
       }
