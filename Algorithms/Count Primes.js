@@ -4,9 +4,11 @@
  * @param {number} n
  * @return {number}
  */
+
+ // TODO: USING HASH TABEL
 var countPrimes = function(n) {
   var i = 2, counts = 0
-  
+
   while (i < n) {
     isPrime(i) && counts++
     i++
