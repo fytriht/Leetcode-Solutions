@@ -6,18 +6,19 @@
  * @return {string}
  */
 var convert = function(s, numRows) {
-  if (numRows == 1)  return s
+  if (numRows == 1) return s
 
-  var i = 0, 
-      result = '',
-      step = 2 * (numRows - 1),
-      len = s.length - 1        // 1 base length
+  var 
+    i = 0, 
+    result = '',
+    step = 2 * (numRows - 1),
+    len = s.length - 1          // 1 base length
 
   while (i < numRows) {
     var j = 0
-    while ((i + step * j) <= len) {
+    while ((i + step * j) <= len) {     // each row
       result += s[i + step * j] 
-      if ((-i + step * (j + 1)) <= len && (i % (numRows - 1) != 0)) {
+      if ((-i + step * (j + 1)) <= len && i % (numRows - 1)) {
         result += s[-i + step * (j + 1)]
       }
       j++
@@ -27,9 +28,9 @@ var convert = function(s, numRows) {
   return result
 };
 
- // beats 99.18% !
+ // beats 99.46% !
 
-console.log(convert('PAYPALISHIRING', 3))
+// console.log(convert('PAYPALISHIRING', 3))
 
 // 0P 1A 2Y 3P 4A 5L 6I 7S 8H 9I 10R 11I 12N 13G
 
