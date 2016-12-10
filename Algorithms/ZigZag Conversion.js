@@ -14,16 +14,14 @@ var convert = function(s, numRows) {
       len = s.length - 1        // 1 base length
 
   while (i < numRows) {
-    var row = '',
-        j = 0
+    var j = 0
     while ((i + step * j) <= len) {
-      row += s[i + step * j] 
+      result += s[i + step * j] 
       if ((-i + step * (j + 1)) <= len && (i % (numRows - 1) != 0)) {
-        row += s[-i + step * (j + 1)]
+        result += s[-i + step * (j + 1)]
       }
       j++
     }
-    result += row
     i++
   }
   return result
