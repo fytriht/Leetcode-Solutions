@@ -8,7 +8,8 @@ var isPalindrome = function(s) {
   var i = 0, j = s.length -1
 
   function isValid(m, n) {
-    return m == n || /[A-Za-z]/.test(m) && /[A-Za-z]/.test(n) &&
+    return m == n || 
+      /[A-Za-z]/.test(m) && /[A-Za-z]/.test(n) &&
       Math.abs(m.charCodeAt(0) - n.charCodeAt(0)) == 32 
   }
 
