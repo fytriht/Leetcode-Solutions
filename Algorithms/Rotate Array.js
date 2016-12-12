@@ -10,4 +10,4 @@ var rotate = function(nums, k) {
 
 // [1,2,3,4,5,6,7]
 // [5,6,7,1,2,3,4]
-console.log(rotate([1,2], 1))
+console.log(rotate([1,2], 1)) 
