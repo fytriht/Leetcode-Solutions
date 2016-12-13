@@ -37,4 +37,4 @@ var compareVersion = function(version1, version2) {
   return 0
 };
 
-// console.log(compareVersion("1.0.0", "1" ))
+console.log(compareVersion("1.0.0", "1" ))
