@@ -17,15 +17,20 @@ var islandPerimeter = function(grid) {
     return counts
   }
 
-  var i, j, yLen = grid.length, xLen = grid[0].length, counts = 0
+  var 
+    yLen = grid.length, 
+    xLen = grid[0].length, 
+    counts = 0,
+    i,
+    j
 
-  for (i = 0; i < yLen; i++) {
-    for (j = 0; j < xLen; j++) {
-      if (grid[i][j]) counts += getPerimeter(i, j, grid)
-    }
-  }
+  for (i = 0; i < yLen; i++) 
+    for (j = 0; j < xLen; j++) 
+      if (grid[i][j]) 
+        counts += getPerimeter(i, j, grid)
+    
   return counts
 };
 
-console.log(islandPerimeter([[0,1]]))
+// console.log(islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]))
 
