@@ -5,7 +5,11 @@
  * @return {number[]}
  */
 var majorityElement = function(nums) {
-  var result = [], hash = {}, i = 0, len = nums.length
+  var 
+    result = [], 
+    hash = {}, 
+    len = nums.length,
+    i = 0
 
   while (i < len) {
     if (hash[nums[i]] == undefined) {
@@ -15,9 +19,7 @@ var majorityElement = function(nums) {
     }
     if (hash[nums[i]] > len / 3 && !result.includes(nums[i])) {
       result.push(nums[i])
-    }
-    if (result.length == 2) {
-      break
+      if (result.length == 2) break
     }
     i++
   }
