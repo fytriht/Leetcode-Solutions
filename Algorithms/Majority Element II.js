@@ -9,8 +9,8 @@ var majorityElement = function(nums) {
     result = [], 
     hash = {}, 
     len = nums.length,
-    cond = len % 3 ? Math.ceil(len / 3) : len / 3 + 1
-    i = 0
+    cond = len % 3 ? Math.ceil(len / 3) : len / 3 + 1,
+    i
 
   for (i = 0; i < len; i++) {
     if (hash[nums[i]] == undefined) {
