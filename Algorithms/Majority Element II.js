@@ -9,6 +9,7 @@ var majorityElement = function(nums) {
     result = [], 
     hash = {}, 
     len = nums.length,
+    cond = len % 3 ? Math.ceil(len / 3) : len / 3 + 1
     i = 0
 
   while (i < len) {
@@ -17,7 +18,7 @@ var majorityElement = function(nums) {
     } else {
       hash[nums[i]]++
     }
-    if (hash[nums[i]] > len / 3 && !result.includes(nums[i])) {
+    if (hash[nums[i]] == cond) {
       result.push(nums[i])
       if (result.length == 2) break
     }
@@ -25,3 +26,5 @@ var majorityElement = function(nums) {
   }
   return result
 };
+
+console.log(majorityElement([1]))
