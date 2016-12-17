@@ -16,9 +16,6 @@ var majorityElement = function(nums) {
     if (hash[nums[i]] == undefined) {
       hash[nums[i]] = 1
     } else {
-      if (hash[nums[i]] == cond) {
-        continue
-      }
       hash[nums[i]]++
     }
     if (hash[nums[i]] == cond) {
