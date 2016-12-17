@@ -5,13 +5,12 @@
  * @return {number}
  */
 var countSegments = function(s) {
-  var i = 0, counts = 0
+  var i, counts = 0
 
-  while (i < s.length) {
-    if (s[i] !== ' ' && (s[i+1] === ' ' || s[i+1] == undefined)) {
+  for (i = 0; i < s.length; i++) {
+    if (s[i] !== ' ' && (s[i+1] === ' ' || s[i+1] === undefined)) {
       counts++
     }
-    i++
   }
   return counts
 };
