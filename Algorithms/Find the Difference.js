@@ -11,16 +11,16 @@ var findTheDifference = function(s, t) {
   var 
     len = s.length, 
     diff = 0,
-    j = s.length -1,
     i
 
-  for (i = 0; i < j; i++, j--) {
+  for (i = 0; i <= len / 2 - 1; i++) {
     diff += t[i].charCodeAt(0)
-    diff += t[j].charCodeAt(0)
+    diff += t[len-i-1].charCodeAt(0)
     diff -= s[i].charCodeAt(0)
-    diff -= s[j].charCodeAt(0)
+    diff -= s[len-i-1].charCodeAt(0)
   }
-  if (i == j) {
+  
+  if (i != len / 2) {
     diff += t[i].charCodeAt(0)
     diff -= s[i].charCodeAt(0)
   }
