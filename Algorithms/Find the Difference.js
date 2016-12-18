@@ -10,34 +10,20 @@
 var findTheDifference = function(s, t) {
   var 
     len = s.length, 
-    hash = {}, 
-    result,
+    diff = 0,
+    j = s.length -1,
     i
 
-  for (i = 0; i < len; i++) {
-    if (hash[t[i]] == undefined) {
-      hash[t[i]] = 1
-    } else {
-      hash[t[i]]++
-    }
-   
-    if (hash[s[i]] == undefined) {
-      hash[s[i]] = -1
-    } else {
-      hash[s[i]]--
-    }
-  
+  for (i = 0; i < j; i++, j--) {
+    diff += t[i].charCodeAt(0)
+    diff += t[j].charCodeAt(0)
+    diff -= s[i].charCodeAt(0)
+    diff -= s[j].charCodeAt(0)
   }
-  
-  if (!hash[t[i]]) {
-    return t[i]
-  } else {
-    hash[t[i]]++
+  if (i == j) {
+    diff += t[i].charCodeAt(0)
+    diff -= s[i].charCodeAt(0)
   }
-  
-  for (var item in hash) {
-    if (hash[item] == 1) {
-      return item
-    }
-  }
+
+  return String.fromCharCode(diff + t[len].charCodeAt(0))
 };
