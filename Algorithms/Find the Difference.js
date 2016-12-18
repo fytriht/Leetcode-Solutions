@@ -14,12 +14,10 @@ var findTheDifference = function(s, t) {
     i
 
   for (i = 0; i <= len / 2 - 1; i++) {
-    diff += t[i].charCodeAt(0)
-    diff += t[len-i-1].charCodeAt(0)
-    diff -= s[i].charCodeAt(0)
-    diff -= s[len-i-1].charCodeAt(0)
+    diff += t[i].charCodeAt(0) + t[len-i-1].charCodeAt(0)
+    diff -= s[i].charCodeAt(0) + s[len-i-1].charCodeAt(0)
   }
-  
+
   if (i != len / 2) {
     diff += t[i].charCodeAt(0)
     diff -= s[i].charCodeAt(0)
