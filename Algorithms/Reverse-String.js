@@ -1,16 +1,21 @@
 // https://leetcode.com/problems/reverse-string/
 
- /**
-  * @param {string} s
-  * @return {string}
-  *
-  * Given s = 'abcd', return 'dcba'
-  */
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var reverseString = function(s) {
-  var newArr = [], i = 0, j = s.length - 1
-  while (i <= j) {
-    newArr[i] = s[j]
-    newArr[j--] = s[i++]
+  var 
+    result = [], 
+    i, 
+    j = s.length -1  
+
+  for (i = 0; i <= j; i++, j--) {
+    result[i] = s[j]
+    result[j] = s[i]
   }
-  return newArr.join('')
-}
+  
+  return result.join('')
+};
+
+// console.log(reverseString(''))
