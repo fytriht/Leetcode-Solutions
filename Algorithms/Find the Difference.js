@@ -10,7 +10,7 @@
 var findTheDifference = function(s, t) {
   var 
     len = s.length, 
-    diff = 0,
+    diff = t.charCodeAt(len),
     i
 
   for (i = 0; i <= len / 2 - 1; i++) {
@@ -22,5 +22,6 @@ var findTheDifference = function(s, t) {
     diff += t.charCodeAt(i) - s.charCodeAt(i)
   }
 
-  return String.fromCharCode(diff + t.charCodeAt(len))
+  return String.fromCharCode(diff)
 };
+
