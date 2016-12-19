@@ -24,4 +24,3 @@ var findTheDifference = function(s, t) {
 
   return String.fromCharCode(diff)
 };
-
