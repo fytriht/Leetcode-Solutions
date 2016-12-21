@@ -8,9 +8,11 @@
  * canConstruct("aa", "aab") -> true
  */
 var canConstruct = function(ransomNote, magazine) {
-  var i = 0, 
-      len = magazine.length, 
-      cache = {}
+  var 
+    i = 0, 
+    len = magazine.length, 
+    cache = {}
+  
   while (i < len) {
     if (!cache[magazine[i]]) {
       cache[magazine[i]] = 0
@@ -18,8 +20,10 @@ var canConstruct = function(ransomNote, magazine) {
     cache[magazine[i]]++
     i++
   }
+
   i = 0
   len = ransomNote.length
+  
   while (i < len) {
     if (!cache[ransomNote[i]]) {
       return false
@@ -30,6 +34,7 @@ var canConstruct = function(ransomNote, magazine) {
     }
     i++
   }
+ 
   return true
 };
 
