@@ -1,6 +1,3 @@
-#ifndef Solution_h
-#define Solution_h
-
 using namespace std;
 
 class Solution {
@@ -27,5 +24,3 @@ public:
     return result;
   }
 };
-
-#endif /* Solution_h */
