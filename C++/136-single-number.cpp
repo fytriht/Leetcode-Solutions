@@ -7,9 +7,7 @@ public:
 
     int result = 0;
     
-    for (auto const &item : nums) {
-      result ^= item;
-    }
+    for (auto const &item : nums) result ^= item;
 
     return result;
   }
