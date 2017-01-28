@@ -12,6 +12,7 @@ $RECYCLE.BIN/
 test.*
 test
 Solution.h
+.vscode
 
 # Windows Installer files
 *.cab
