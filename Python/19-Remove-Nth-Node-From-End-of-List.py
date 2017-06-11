@@ -12,13 +12,13 @@ class Solution(object):
         :rtype: ListNode
         """
         slow = head
-        fast = head
+        fast = head.next
         while n > 0:
+            if not fast:
+                return head.next
             fast = fast.next
             n -= 1
-        if not fast:
-            return head.next
-        while(fast.next):
+        while fast:
             fast = fast.next
             slow = slow.next
         slow.next = slow.next.next
