@@ -5,9 +5,10 @@ class Solution(object):
         :rtype: int
         """
         length = 0
-        for i, ch in enumerate(s):
-            if ch != ' ':
-                if s[i-1] == ' ':
-                    length = 0
+        for ch in reversed(s):
+            if ch == ' ':
+                if length:
+                    break
+            else:
                 length += 1
         return length
