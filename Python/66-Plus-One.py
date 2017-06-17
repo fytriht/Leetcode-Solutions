@@ -8,5 +8,6 @@ class Solution(object):
         for i in reversed(range(len(digits))):
             d = digits[i] + carry
             digits[i] = d % 10
-            carry = 1 if d >= 10 else 0
-        return digits if carry == 0 else [carry] + digits
+            if d < 10:
+                carry = 0
+        return digits if carry == 0 else [1] + digits
