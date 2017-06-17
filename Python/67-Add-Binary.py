@@ -14,8 +14,8 @@ class Solution(object):
                 val += int(a[- (i + 1)])
             if i < lengthB:
                 val += int(b[- (i + 1)])
-            result +=  str(val % 2)
-            carry = 1 if val >= 2 else 0
+            result += str(val % 2)
+            carry = val // 2
         if carry == 1:
             result += '1'
         return result[::-1]
