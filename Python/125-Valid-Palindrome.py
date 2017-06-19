@@ -6,14 +6,10 @@ class Solution(object):
         """
         i, j = 0, len(s) - 1
         while i < j:
-            while not s[i].isalnum():
+            while i < j and not s[i].isalnum():
                 i += 1
-                if i >= j:
-                    return True
-            while not s[j].isalnum():
+            while i < j and not s[j].isalnum():
                 j -= 1
-                if i >= j:
-                    return True
             if s[i].lower() != s[j].lower():
                 return False
             i, j = i + 1, j - 1
