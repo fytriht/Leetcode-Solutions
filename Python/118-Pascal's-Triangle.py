@@ -4,17 +4,17 @@ class Solution(object):
         :type numRows: int
         :rtype: List[List[int]]
         """
-        result = []
+        self.result = []
         for i in range(numRows):
-            result.append(self.genRow(i + 1))
-        return result
+            self.result.append(self.genRow(i + 1))
+        return self.result
 
     def genRow(self, row):
         if row == 1:
             return [1]
         if row == 2:
             return [1, 1]
-        last = self.genRow(row -1)
+        last = self.result[row - 2]
         i = 1
         result = []
         while i < row - 1:
