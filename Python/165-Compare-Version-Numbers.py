@@ -9,9 +9,8 @@ class Solution(object):
         version2 = version2.split('.')
         len1 = len(version1)
         len2 = len(version2)
-        times = max(len(version1), len(version2))
 
-        for i in range(times):
+        for i in range(max(len1, len2)):
             if i > len1 - 1:
                 if int(version2[i]) != 0:
                     return -1
@@ -21,10 +20,6 @@ class Solution(object):
                     return 1
                 continue
 
-            v1 = int(version1[i])
-            v2 = int(version2[i])
-            if v1 > v2:
-                return 1
-            if v2 > v1:
-                return -1
+            if int(version1[i]) != int(version2[i]):
+                return 1 if int(version1[i]) > int(version2[i]) else -1
         return 0
