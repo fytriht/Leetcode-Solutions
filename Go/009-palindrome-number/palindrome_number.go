@@ -9,9 +9,7 @@ func isPalindrome(x int) bool {
 		bit = bit * 10
 	}
 	for x != 0 {
-		left := x / bit
-		right := x % 10
-		if left != right {
+		if x/bit != x%10 {
 			return false
 		}
 		x = (x % bit) / 10
