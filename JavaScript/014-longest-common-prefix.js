@@ -1,16 +1,14 @@
 let longestCommonPrefix = strs => {
-  let ret = ''
   if (strs.length === 0) {
-    return ret
+    return ''
   }
-  for (let i = 1, fst = strs.shift(); i <= fst.length; i++) {
-    let tmp = fst.substring(0, i)
+  let fst = strs.shift()
+  for (let i = 1 ; i <= fst.length; i++) {
     for (let wd of strs) {
-      if (wd.length < i || wd.substring(0, i) !== tmp) {
-        return ret
+      if (wd.length < i || wd.substring(0, i) !== fst.substring(0, i)) {
+        return fst.substring(0, i -1 )
       }
     }
-    ret = tmp
   }
-  return ret
+  return fst
 }
