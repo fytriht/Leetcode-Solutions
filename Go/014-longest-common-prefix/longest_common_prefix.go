@@ -5,17 +5,12 @@ func longestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ret
 	}
-	for i := 1; i <= len(strs[0]); i++ {
-		tmp := strs[0][:i]
-		matched := true
+	for i, fst := 1, strs[0]; i <= len(fst); i++ {
+		tmp := fst[:i]
 		for j := 1; j < len(strs); j++ {
 			if len(strs[j]) < i || strs[j][:i] != tmp {
-				matched = false
-				break
+				return ret
 			}
-		}
-		if !matched {
-			return ret
 		}
 		ret = tmp
 	}
