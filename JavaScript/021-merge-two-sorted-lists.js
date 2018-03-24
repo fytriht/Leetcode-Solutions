@@ -7,7 +7,7 @@ function ListNode(val) {
 }
 
 let mergeTwoLists = (l1, l2) => {
-  let head = curr = ListNode()
+  let head = (curr = ListNode())
 
   while (l1 && l2) {
     if (l1.val < l2.val) {
