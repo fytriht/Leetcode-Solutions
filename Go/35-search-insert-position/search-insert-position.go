@@ -1,13 +1,10 @@
 package searchInsert
 
 func searchInsert(nums []int, target int) int {
-	i := 0
-	for i < len(nums) {
-		if nums[i] == target || target < nums[i] {
-			break
+	for i, n := range nums {
+		if n == target || n > target {
+			return i
 		}
-		i++
-
 	}
-	return i
+	return len(nums)
 }
