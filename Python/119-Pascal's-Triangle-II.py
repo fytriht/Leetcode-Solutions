@@ -1,9 +1,5 @@
 class Solution(object):
     def getRow(self, rowIndex):
-        """
-        :type rowIndex: int
-        :rtype: List[int]
-        """
         if rowIndex == 0:
             return [1]
         if rowIndex == 1:

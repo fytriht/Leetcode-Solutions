@@ -1,9 +1,5 @@
 class Solution(object):
     def titleToNumber(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         base = 1
         result = 0
         for i in reversed(range(len(s))):

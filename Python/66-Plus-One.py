@@ -1,9 +1,5 @@
 class Solution(object):
     def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
         carry = 1
         for i in reversed(range(len(digits))):
             d = digits[i] + carry

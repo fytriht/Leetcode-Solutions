@@ -1,9 +1,5 @@
 class Solution(object):
     def generate(self, numRows):
-        """
-        :type numRows: int
-        :rtype: List[List[int]]
-        """
         self.result = []
         for i in range(numRows):
             self.result.append(self.genRow(i + 1))

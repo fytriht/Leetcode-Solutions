@@ -1,9 +1,5 @@
 class Solution(object):
     def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         cache = {}
         length = len(nums)
         for num in nums:

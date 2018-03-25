@@ -1,10 +1,5 @@
 class Solution(object):
     def compareVersion(self, version1, version2):
-        """
-        :type version1: str
-        :type version2: str
-        :rtype: int
-        """
         version1 = version1.split('.')
         version2 = version2.split('.')
         len1 = len(version1)
