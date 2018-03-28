@@ -6,9 +6,9 @@ type ListNode struct {
 }
 
 func deleteDuplicates(head *ListNode) *ListNode {
-	for curr := head; curr != nil; curr = curr.Next {
-		for curr.Next != nil && curr.Val == curr.Next.Val {
-			curr.Next = curr.Next.Next
+	for i := head; i != nil; i = i.Next {
+		for i.Next != nil && i.Val == i.Next.Val {
+			i.Next = i.Next.Next
 		}
 	}
 	return head
