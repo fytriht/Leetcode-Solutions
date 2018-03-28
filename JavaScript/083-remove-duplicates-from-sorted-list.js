@@ -1,8 +1,8 @@
-let deleteDuplicates = head => {
-  for (let i = node; i; i = i.next) {
-    while (i.next && i.val === i.next.val) {
-      i.next = i.next.next
-    }
-  }
-  return head
-}
+let deleteDuplicates = head => (
+  head &&
+    head.next &&
+    (head.val === head.next.val
+      ? (head = deleteDuplicates(head.next))
+      : (head.next = deleteDuplicates(head.next))),
+  head
+)
