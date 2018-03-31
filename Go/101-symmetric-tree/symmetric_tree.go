@@ -22,3 +22,22 @@ func isSymmetricRec(r1 *TreeNode, r2 *TreeNode) bool {
 	}
 	return isSymmetricRec(r1.Left, r2.Right) && isSymmetricRec(r1.Right, r2.Left)
 }
+
+func isSymmetric2(root *TreeNode) bool {
+	if root == nil {
+		return true
+	}
+	s := []*TreeNode{root.Left, root.Right}
+	for len(s) > 0 {
+		n1, n2 := s[0], s[1]
+		s = s[2:]
+		if n1 == nil && n2 == nil {
+			continue
+		}
+		if n1 == nil || n2 == nil || n1.Val != n2.Val {
+			return false
+		}
+		s = append(s, n1.Left, n2.Right, n1.Right, n2.Left)
+	}
+	return true
+}
