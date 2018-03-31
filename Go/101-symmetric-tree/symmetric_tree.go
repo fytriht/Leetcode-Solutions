@@ -29,8 +29,7 @@ func isSymmetric2(root *TreeNode) bool {
 	}
 	s := []*TreeNode{root.Left, root.Right}
 	for len(s) > 0 {
-		n1, n2 := s[0], s[1]
-		s = s[2:]
+		n1, n2, s := s[0], s[1], s[2:]
 		if n1 == nil && n2 == nil {
 			continue
 		}
