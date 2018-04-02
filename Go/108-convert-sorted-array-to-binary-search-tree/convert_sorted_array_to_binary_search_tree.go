@@ -16,8 +16,8 @@ func fn(nums *[]int, start int, end int) *TreeNode {
 	}
 	m := start + (end-start)/2
 	return &TreeNode{
-		Val:   (*nums)[m],
-		Left:  fn(nums, start, m-1),
-		Right: fn(nums, m+1, end),
+		(*nums)[m],
+		fn(nums, start, m-1),
+		fn(nums, m+1, end),
 	}
 }
