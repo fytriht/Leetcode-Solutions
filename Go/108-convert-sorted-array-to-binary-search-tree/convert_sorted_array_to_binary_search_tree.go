@@ -7,17 +7,13 @@ type TreeNode struct {
 }
 
 func sortedArrayToBST(nums []int) *TreeNode {
-	return fn(&nums, 0, len(nums)-1)
-}
-
-func fn(nums *[]int, start int, end int) *TreeNode {
-	if start > end {
+	if len(nums) == 0 {
 		return nil
 	}
-	m := start + (end-start)/2
+	m := len(nums) / 2
 	return &TreeNode{
-		(*nums)[m],
-		fn(nums, start, m-1),
-		fn(nums, m+1, end),
+		nums[m],
+		sortedArrayToBST(nums[:m]),
+		sortedArrayToBST(nums[m+1:]),
 	}
 }
