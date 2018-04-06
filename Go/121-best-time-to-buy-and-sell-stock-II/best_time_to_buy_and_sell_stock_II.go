@@ -15,3 +15,14 @@ func maxProfit(prices []int) int {
 	}
 	return max
 }
+
+func maxProfit2(prices []int) int {
+	max := 0
+	for i := 0; i < len(prices)-1; i++ {
+		profit := prices[i+1] - prices[i]
+		if profit > 0 {
+			max += profit
+		}
+	}
+	return max
+}
