@@ -1,15 +1,8 @@
-let maxProfit = prices => {
-  let begin = 0
-  let end = 0
-  let max = 0
-  while (end < prices.length) {
-    let profit = prices[end] - prices[begin]
-    if (profit <= 0) {
-      begin = end
-    } else if (profit > max) {
-      max = profit
-    }
-    end++
-  }
-  return max
-}
+let maxProfit = prices =>
+  prices.reduce(
+    ([max, begin], _, end) => (
+      (pf = prices[end] - prices[begin]),
+      pf <= 0 ? [max, end] : pf > max ? [pf, begin] : [max, begin]
+    ),
+    [0, 0],
+  )[0]
