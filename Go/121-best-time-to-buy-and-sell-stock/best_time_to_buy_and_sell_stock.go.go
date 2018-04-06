@@ -1,19 +1,15 @@
 package maxProfit
 
-// TODO: more efficient
-
 func maxProfit(prices []int) int {
-	max := 0
-	i, j := 0, len(prices)-1
-	for i < j {
-		for i < j {
-			if d := prices[j] - prices[i]; d > max {
-				max = d
-			}
-			j--
+	var begin, end, max int
+	for end < len(prices) {
+		profit := prices[end] - prices[begin]
+		if profit <= 0 {
+			begin = end
+		} else if profit > max {
+			max = profit
 		}
-		i++
-		j = len(prices) - 1
+		end++
 	}
 	return max
 }
