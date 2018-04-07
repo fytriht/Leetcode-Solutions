@@ -23,5 +23,5 @@ func isPalindrome(s string) bool {
 }
 
 func isAlnum(x byte) bool {
-	return x >= 'a' && x <= 'Z' || x >= 'A' && x <= 'Z' || x >= '0' && x <= '9'
+	return x >= 'a' && x <= 'z' || x >= 'A' && x <= 'Z' || x >= '0' && x <= '9'
 }
