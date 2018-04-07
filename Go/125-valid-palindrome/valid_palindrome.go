@@ -7,10 +7,10 @@ import (
 func isPalindrome(s string) bool {
 	i, j := 0, len(s)-1
 	for i < j {
-		for i < j && !isAlnum(rune(s[i])) {
+		for i < j && !isAlnum(s[i]) {
 			i++
 		}
-		for i < j && !isAlnum(rune(s[j])) {
+		for i < j && !isAlnum(s[j]) {
 			j--
 		}
 		if unicode.ToLower(rune(s[i])) != unicode.ToLower(rune(s[j])) {
@@ -22,6 +22,6 @@ func isPalindrome(s string) bool {
 	return true
 }
 
-func isAlnum(x rune) bool {
-	return unicode.IsLetter(x) || unicode.IsDigit(x)
+func isAlnum(x byte) bool {
+	return x >= 'a' && x <= 'Z' || x >= 'A' && x <= 'Z' || x >= '0' && x <= '9'
 }
