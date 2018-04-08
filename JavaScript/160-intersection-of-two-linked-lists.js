@@ -1,26 +1,20 @@
 let getIntersectionNode = (headA, headB) => {
   let currA = headA
   let currB = headB
-  let tailA = (tailB = null)
+  let aReached = (bReached = false)
   while (currA && currB) {
     if (currA === currB) {
       return currA
     }
-    if (currA.next) {
-      currA = currA.next
-    } else if (!tailA) {
-      tailA = currA
+    currA = currA.next
+    currB = currB.next
+    if (!currA && !aReached) {
+      aReached = true
       currA = headB
-    } else {
-      break
     }
-    if (currB.next) {
-      currB = currB.next
-    } else if (!tailB) {
-      tailB = currB
-      currB = headB
-    } else {
-      break
+    if (!currB && !bReached) {
+      bReached = true
+      currB = headA
     }
   }
   return null
