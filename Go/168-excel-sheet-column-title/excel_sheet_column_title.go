@@ -4,8 +4,7 @@ func convertToTitle(n int) string {
 	ret := ""
 	for n != 0 {
 		ret = string((n-1)%26+'A') + ret
-		n -= (n - 1) % 26
-		n /= 26
+		n = (n - (n-1)%26) / 26
 	}
 	return ret
 }
