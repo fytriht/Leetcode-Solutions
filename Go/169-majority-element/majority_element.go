@@ -1,12 +1,18 @@
 package majority
 
+// http://www.cs.utexas.edu/~moore/best-ideas/mjrty/example.html
+
 func majorityElement(nums []int) int {
-	m := make(map[int]int)
+	cdd, cnt := 0, 0
 	for _, n := range nums {
-		m[n]++
-		if m[n] > len(nums)/2 {
-			return n
+		if cnt == 0 {
+			cdd = n
+		}
+		if cdd == n {
+			cnt++
+		} else {
+			cnt--
 		}
 	}
-	return -1
+	return cdd
 }
