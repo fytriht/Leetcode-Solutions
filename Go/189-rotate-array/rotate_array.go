@@ -14,11 +14,9 @@ func rotate(nums []int, k int) {
 func rotate2(nums []int, k int) {
 	curr, base := 0, 0
 	for i := 0; i < len(nums); i++ {
-		curr += k
-		curr %= len(nums)
+		curr = (curr + k) % len(nums)
 		if curr == base {
-			base++
-			base %= len(nums)
+			base = (base + 1) % len(nums)
 			curr = base
 		}
 		nums[curr], nums[base] = nums[base], nums[curr]
