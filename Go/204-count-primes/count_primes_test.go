@@ -13,6 +13,7 @@ func TestCountPrimies(t *testing.T) {
 	cases := []testcase{
 		{0, 0},
 		{1, 0},
+		{2, 0},
 		{10, 4},
 		{499979, 41537},
 	}
