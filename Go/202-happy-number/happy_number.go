@@ -3,7 +3,7 @@ package happy
 func isHappy(n int) bool {
 	m := make(map[int]bool)
 	for {
-		n = getSumOfDigitsSuqare(n)
+		n = getNext(n)
 		if m[n] {
 			return false
 		}
@@ -14,7 +14,7 @@ func isHappy(n int) bool {
 	}
 }
 
-func getSumOfDigitsSuqare(n int) int {
+func getNext(n int) int {
 	s := 0
 	for n != 0 {
 		s += (n % 10) * (n % 10)
