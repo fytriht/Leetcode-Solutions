@@ -18,7 +18,7 @@ func TestIsIsomorphic(t *testing.T) {
 		{"ab", "cc", false},
 	}
 	for _, c := range cases {
-		if got := isIsomorphic(c.ina, c.inb); got != c.want {
+		if got := isIsomorphic2(c.ina, c.inb); got != c.want {
 			t.Errorf(
 				"isIsomorphic(\"%s\", \"%s\"): expected %t but got %t",
 				c.ina,
