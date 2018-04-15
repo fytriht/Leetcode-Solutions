@@ -10,6 +10,6 @@ let isHappy = n => {
 
 let getNext = n => {
   let s = 0
-  for (let d of String(n)) s += Math.pow(d, 2)
+  for (let d of String(n)) s += d * d
   return s
 }
