@@ -28,3 +28,35 @@ func (s *MyStack) Top() int {
 func (s *MyStack) Empty() bool {
 	return s.q.IsEmpty()
 }
+
+type MyStack2 struct {
+	q   *Queue
+	top int
+}
+
+func Constructor2() MyStack2 {
+	return MyStack2{
+		q: NewQueue(),
+	}
+}
+
+func (s *MyStack2) Push(x int) {
+	s.q.Push(x)
+	s.top = x
+}
+
+func (s *MyStack2) Pop() int {
+	for i := s.q.Size() - 1; i > 0; i-- {
+		s.top = s.q.Pop()
+		s.q.Push(s.top)
+	}
+	return s.q.Pop()
+}
+
+func (s *MyStack2) Top() int {
+	return s.top
+}
+
+func (s *MyStack2) Empty() bool {
+	return s.q.IsEmpty()
+}
