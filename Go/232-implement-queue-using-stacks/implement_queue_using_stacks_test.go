@@ -1,7 +1,6 @@
 package queue
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -33,7 +32,6 @@ func TestMyQueue(t *testing.T) {
 	s3.Push(1)
 	s3.Push(2)
 	s3.Push(3)
-	fmt.Println(s3.s.data)
 	if s3.Peek() != 1 {
 		t.Error("expected to get front element")
 	}
