@@ -32,3 +32,36 @@ func (q *MyQueue) Peek() int {
 func (q *MyQueue) Empty() bool {
 	return q.s.IsEmpty()
 }
+
+type MyQueue2 struct {
+	s1, s2 *Stack
+}
+
+func Constructor2() MyQueue2 {
+	return MyQueue2{
+		NewStack(),
+		NewStack(),
+	}
+}
+
+func (q *MyQueue2) Push(x int) {
+	q.s1.Push(x)
+}
+
+func (q *MyQueue2) Pop() int {
+	q.Peek()
+	return q.s2.Pop()
+}
+
+func (q *MyQueue2) Peek() int {
+	if q.s2.Size() == 0 {
+		for !q.s1.IsEmpty() {
+			q.s2.Push(q.s1.Pop())
+		}
+	}
+	return q.s2.Peek()
+}
+
+func (q *MyQueue2) Empty() bool {
+	return q.s1.IsEmpty() && q.s2.IsEmpty()
+}
