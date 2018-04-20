@@ -18,6 +18,7 @@ func TestIsPalindrome(t *testing.T) {
 		{[]int{1, 2, 3, 2, 1, 2}, false},
 		{[]int{1, 2, 3, 2}, false},
 		{[]int{1, 2, 2, 1, 2, 2, 1}, true},
+		{[]int{1, 1, 2, 1}, false},
 	}
 	for _, c := range cases {
 		if got := isPalindrome(build(c.in)); got != c.want {
