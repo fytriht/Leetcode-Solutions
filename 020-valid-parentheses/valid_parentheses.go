@@ -1,4 +1,4 @@
-package isValid
+package solution
 
 func isValid(s string) bool {
 	var m = map[rune]rune{

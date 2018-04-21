@@ -1,4 +1,4 @@
-package countAndSay
+package solution
 
 import "strconv"
 

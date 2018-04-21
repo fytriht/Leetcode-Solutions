@@ -1,4 +1,4 @@
-package title
+package solution
 
 func titleToNumber(s string) int {
 	ret := 0

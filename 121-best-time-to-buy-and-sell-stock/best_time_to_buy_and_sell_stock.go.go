@@ -1,4 +1,4 @@
-package maxProfit
+package solution
 
 import (
 	"math"

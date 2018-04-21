@@ -1,4 +1,4 @@
-package queue
+package solution
 
 type Stack struct {
 	data []int

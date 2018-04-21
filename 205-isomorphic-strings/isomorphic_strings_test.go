@@ -1,4 +1,4 @@
-package isomorphic
+package solution
 
 import (
 	"testing"

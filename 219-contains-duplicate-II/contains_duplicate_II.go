@@ -1,4 +1,4 @@
-package duplicate
+package solution
 
 func containsNearbyDuplicate(nums []int, k int) bool {
 	m := map[int]int{}

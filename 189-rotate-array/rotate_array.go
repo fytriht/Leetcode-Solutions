@@ -1,4 +1,4 @@
-package rotate
+package solution
 
 func rotate(nums []int, k int) {
 	for k > 0 {

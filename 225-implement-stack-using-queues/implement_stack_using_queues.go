@@ -1,4 +1,4 @@
-package stack
+package solution
 
 type MyStack struct {
 	q *Queue

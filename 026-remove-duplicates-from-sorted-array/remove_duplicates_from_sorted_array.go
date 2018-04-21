@@ -1,4 +1,4 @@
-package removeDuplicates
+package solution
 
 func removeDuplicates(nums []int) int {
 	i := -1

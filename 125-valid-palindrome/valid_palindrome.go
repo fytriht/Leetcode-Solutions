@@ -1,4 +1,4 @@
-package palindrome
+package solution
 
 import (
 	"unicode"

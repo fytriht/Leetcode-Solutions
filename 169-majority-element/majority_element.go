@@ -1,4 +1,4 @@
-package majority
+package solution
 
 // http://www.cs.utexas.edu/~moore/best-ideas/mjrty/example.html
 

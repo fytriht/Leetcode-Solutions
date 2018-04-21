@@ -1,4 +1,4 @@
-package queue
+package solution
 
 type MyQueue struct {
 	s *Stack

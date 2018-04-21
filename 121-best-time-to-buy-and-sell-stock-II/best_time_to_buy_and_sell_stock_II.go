@@ -1,4 +1,4 @@
-package maxProfit
+package solution
 
 func maxProfit(prices []int) int {
 	max, tmpMax := 0, 0

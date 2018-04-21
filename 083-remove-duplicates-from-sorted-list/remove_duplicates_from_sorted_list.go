@@ -1,4 +1,4 @@
-package deleteDuplicates
+package solution
 
 type ListNode struct {
 	Val  int

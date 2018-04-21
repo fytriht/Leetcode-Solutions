@@ -1,4 +1,4 @@
-package sortedArrayToBST
+package solution
 
 type TreeNode struct {
 	Val   int

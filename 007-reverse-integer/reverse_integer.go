@@ -1,4 +1,4 @@
-package twoSum
+package solution
 
 import "math"
 

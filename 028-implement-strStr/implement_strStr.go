@@ -1,4 +1,4 @@
-package strStr
+package solution
 
 // TODO: KMP Algorithm http://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm
 

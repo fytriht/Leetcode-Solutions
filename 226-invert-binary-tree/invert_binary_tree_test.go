@@ -1,4 +1,4 @@
-package invert
+package solution
 
 import (
 	"testing"

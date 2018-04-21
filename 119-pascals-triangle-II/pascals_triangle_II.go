@@ -1,4 +1,4 @@
-package getRow
+package solution
 
 func getRow(rowIndex int) []int {
 	ret := make([]int, rowIndex+1)

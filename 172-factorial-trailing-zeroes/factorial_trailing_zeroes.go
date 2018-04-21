@@ -1,4 +1,4 @@
-package trailing
+package solution
 
 func trailingZeroes(n int) int {
 	ret := 0

@@ -1,4 +1,4 @@
-package mergeTwoLists
+package solution
 
 type ListNode struct {
 	Val  int

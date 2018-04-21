@@ -1,4 +1,4 @@
-package remove
+package solution
 
 type ListNode struct {
 	Val  int

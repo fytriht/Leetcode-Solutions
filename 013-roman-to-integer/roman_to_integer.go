@@ -1,4 +1,4 @@
-package romanToInt
+package solution
 
 var m = map[byte]int{
 	'I': 1,

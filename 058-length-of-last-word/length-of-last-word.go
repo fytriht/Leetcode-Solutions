@@ -1,4 +1,4 @@
-package lengthOfLastWord
+package solution
 
 func lengthOfLastWord(s string) int {
 	length := 0

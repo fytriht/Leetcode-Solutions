@@ -1,4 +1,4 @@
-package generate
+package solution
 
 func generate(numRows int) [][]int {
 	var ret [][]int

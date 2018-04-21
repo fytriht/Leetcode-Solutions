@@ -1,4 +1,4 @@
-package invert
+package solution
 
 type TreeNode struct {
 	Val   int

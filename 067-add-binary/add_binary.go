@@ -1,4 +1,4 @@
-package addBinary
+package solution
 
 import "strconv"
 

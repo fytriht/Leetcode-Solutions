@@ -1,4 +1,4 @@
-package isSameTree
+package solution
 
 type TreeNode struct {
 	Val   int

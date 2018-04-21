@@ -1,4 +1,4 @@
-package sqrtx
+package solution
 
 func mySqrt(x int) int {
 	ret := x

@@ -1,4 +1,4 @@
-package convert
+package solution
 
 func convertToTitle(n int) string {
 	ret := ""

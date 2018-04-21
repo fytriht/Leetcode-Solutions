@@ -1,4 +1,4 @@
-package minDepth
+package solution
 
 type TreeNode struct {
 	Val   int

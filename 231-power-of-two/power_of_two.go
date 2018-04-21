@@ -1,4 +1,4 @@
-package power
+package solution
 
 func isPowerOfTwo(n int) bool {
 	for i := 1; i <= n; i *= 2 {

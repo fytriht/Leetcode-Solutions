@@ -1,4 +1,4 @@
-package climbStairs
+package solution
 
 func climbStairs(n int) int {
 	x, y := 0, 1
