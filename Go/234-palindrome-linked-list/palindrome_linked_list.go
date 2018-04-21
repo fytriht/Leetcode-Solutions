@@ -5,7 +5,9 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//
 // solution 1
+//
 
 func isPalindrome(head *ListNode) bool {
 	s := []int{}
@@ -23,7 +25,9 @@ func isPalindrome(head *ListNode) bool {
 	return true
 }
 
+//
 // solution 2
+//
 
 func isPalindrome2(head *ListNode) bool {
 	reversed := reverse(head)
@@ -51,7 +55,9 @@ func reverse(head *ListNode) *ListNode {
 	return ret
 }
 
+//
 // solution 3
+//
 
 func isPalindrome3(head *ListNode) bool {
 	if head == nil {
@@ -90,25 +96,24 @@ func reverseInPlace(head *ListNode) *ListNode {
 	return ret
 }
 
+//
 // solution 4
+//
 
 func isPalindrome4(head *ListNode) bool {
 	left := head
-
 	var rec func(*ListNode) bool
 	rec = func(right *ListNode) bool {
-		if right == nil {
+		switch {
+		case right == nil:
 			return true
-		}
-		if !rec(right.Next) {
+		case !rec(right.Next):
 			return false
-		}
-		if left.Val != right.Val {
+		case left.Val != right.Val:
 			return false
 		}
 		left = left.Next
 		return true
 	}
-
 	return rec(head)
 }
