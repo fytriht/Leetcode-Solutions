@@ -89,3 +89,26 @@ func reverseInPlace(head *ListNode) *ListNode {
 	}
 	return ret
 }
+
+// solution 4
+
+func isPalindrome4(head *ListNode) bool {
+	left := head
+
+	var rec func(*ListNode) bool
+	rec = func(right *ListNode) bool {
+		if right == nil {
+			return true
+		}
+		if !rec(right.Next) {
+			return false
+		}
+		if left.Val != right.Val {
+			return false
+		}
+		left = left.Next
+		return true
+	}
+
+	return rec(head)
+}
