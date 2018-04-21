@@ -5,6 +5,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// solution 1
+
 func isPalindrome(head *ListNode) bool {
 	s := []int{}
 	for head != nil {
@@ -20,6 +22,8 @@ func isPalindrome(head *ListNode) bool {
 	}
 	return true
 }
+
+// solution 2
 
 func isPalindrome2(head *ListNode) bool {
 	reversed := reverse(head)
@@ -43,6 +47,45 @@ func reverse(head *ListNode) *ListNode {
 		tmp.Next = ret
 		ret = tmp
 		i = i.Next
+	}
+	return ret
+}
+
+// solution 3
+
+func isPalindrome3(head *ListNode) bool {
+	if head == nil {
+		return true
+	}
+	mid := findMid(head)
+	revMid := reverseInPlace(mid.Next)
+	mid.Next = nil
+	for revMid != nil {
+		if head.Val != revMid.Val {
+			return false
+		}
+		head, revMid = head.Next, revMid.Next
+	}
+	return true
+}
+
+// assumes non-nil head
+func findMid(head *ListNode) *ListNode {
+	fast, slow := head, head
+	for fast.Next != nil && fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	return slow
+}
+
+func reverseInPlace(head *ListNode) *ListNode {
+	var ret *ListNode
+	for head != nil {
+		tmp := head.Next
+		head.Next = ret
+		ret = head
+		head = tmp
 	}
 	return ret
 }
