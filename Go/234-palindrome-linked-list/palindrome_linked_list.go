@@ -101,7 +101,6 @@ func reverseInPlace(head *ListNode) *ListNode {
 //
 
 func isPalindrome4(head *ListNode) bool {
-	left := head
 	var rec func(*ListNode) bool
 	rec = func(right *ListNode) bool {
 		switch {
@@ -109,10 +108,10 @@ func isPalindrome4(head *ListNode) bool {
 			return true
 		case !rec(right.Next):
 			return false
-		case left.Val != right.Val:
+		case head.Val != right.Val:
 			return false
 		default:
-			left = left.Next
+			head = head.Next
 			return true
 		}
 	}
