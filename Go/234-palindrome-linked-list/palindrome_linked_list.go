@@ -111,9 +111,10 @@ func isPalindrome4(head *ListNode) bool {
 			return false
 		case left.Val != right.Val:
 			return false
+		default:
+			left = left.Next
+			return true
 		}
-		left = left.Next
-		return true
 	}
 	return rec(head)
 }
