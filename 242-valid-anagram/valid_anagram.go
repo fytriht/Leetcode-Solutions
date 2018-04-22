@@ -12,7 +12,7 @@ func isAnagram(s, t string) bool {
 	if len(s) != len(t) {
 		return false
 	}
-	m := map[rune]int{}
+	m := make(map[rune]int, len(s))
 	for _, b := range s {
 		m[b]++
 	}
