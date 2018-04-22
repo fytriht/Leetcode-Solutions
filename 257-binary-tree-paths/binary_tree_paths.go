@@ -12,19 +12,21 @@ type TreeNode struct {
 }
 
 func binaryTreePaths(root *TreeNode) []string {
-	ret := []string{}
-	binaryTreePathsRec(root, &ret, []string{})
-	return ret
-}
+	var ret []string
 
-func binaryTreePathsRec(root *TreeNode, ret *[]string, path []string) {
-	if root == nil {
-		return
+	var df func(*TreeNode, []string)
+	df = func(root *TreeNode, path []string) {
+		if root == nil {
+			return
+		}
+		path = append(path, strconv.Itoa(root.Val))
+		if root.Left == nil && root.Right == nil {
+			ret = append(ret, strings.Join(path, "->"))
+		}
+		df(root.Left, path)
+		df(root.Right, path)
 	}
-	path = append(path, strconv.Itoa(root.Val))
-	if root.Left == nil && root.Right == nil {
-		*ret = append(*ret, strings.Join(path, "->"))
-	}
-	binaryTreePathsRec(root.Left, ret, path)
-	binaryTreePathsRec(root.Right, ret, path)
+
+	df(root, []string{})
+	return ret
 }
