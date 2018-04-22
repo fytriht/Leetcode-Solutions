@@ -4,13 +4,13 @@ func isAnagram(s, t string) bool {
 	if len(s) != len(t) {
 		return false
 	}
-	m := map[byte]int{}
-	for i := range s {
-		m[s[i]]++
-		m[t[i]]--
+	m := map[rune]int{}
+	for _, b := range s {
+		m[b]++
 	}
-	for _, v := range m {
-		if v != 0 {
+	for _, b := range t {
+		m[b]--
+		if m[b] < 0 {
 			return false
 		}
 	}
