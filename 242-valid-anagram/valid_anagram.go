@@ -35,20 +35,8 @@ func isAnagram2(s, t string) bool {
 
 func SortString(s string) string {
 	r := []rune(s)
-	sort.Sort(sortRune(r))
+	sort.Slice(r, func(i, j int) bool {
+		return r[i] < r[j]
+	})
 	return string(r)
-}
-
-type sortRune []rune
-
-func (s sortRune) Less(i, j int) bool {
-	return s[i] < s[j]
-}
-
-func (s sortRune) Swap(i, j int) {
-	s[i], s[j] = s[j], s[i]
-}
-
-func (s sortRune) Len() int {
-	return len(s)
 }
