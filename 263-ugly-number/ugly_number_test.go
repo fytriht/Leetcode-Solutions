@@ -9,6 +9,7 @@ func TestIsUgly(t *testing.T) {
 		in   int
 		want bool
 	}{
+		{0, false},
 		{1, true},
 		{6, true},
 		{8, true},
