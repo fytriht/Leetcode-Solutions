@@ -18,7 +18,7 @@ func TestMoveZeroes(t *testing.T) {
 
 	for _, c := range cases {
 		in := append([]int{}, c.in...)
-		moveZeroes(c.in)
+		moveZeroes2(c.in)
 		if !isShallowEq(c.in, c.want) {
 			t.Errorf(
 				"\n input: %v\n expected: %v\n got: %v",
