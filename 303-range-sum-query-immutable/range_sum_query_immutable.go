@@ -32,9 +32,9 @@ type NumArray2 struct {
 }
 
 func Constructor2(nums []int) NumArray2 {
-	s := []int{0}
-	for _, n := range nums {
-		s = append(s, s[len(s)-1]+n)
+	s := make([]int, len(nums)+1)
+	for i, n := range nums {
+		s[i+1] = s[i] + n
 	}
 	return NumArray2{
 		s,
