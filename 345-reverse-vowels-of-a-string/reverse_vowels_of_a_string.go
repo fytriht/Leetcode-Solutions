@@ -1,5 +1,9 @@
 package solution
 
+import (
+	"unicode"
+)
+
 func reverseVowels(s string) string {
 	ret := []byte(s)
 	i, j := 0, len(s)-1
@@ -22,8 +26,8 @@ func reverseVowels(s string) string {
 }
 
 func isVowels(b byte) bool {
-	switch b {
-	case 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U':
+	switch byte(unicode.ToLower(rune(b))) {
+	case 'a', 'e', 'i', 'o', 'u':
 		return true
 	default:
 		return false
