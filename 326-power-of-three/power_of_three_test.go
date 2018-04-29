@@ -17,7 +17,7 @@ func TestIsPowerOfThree(t *testing.T) {
 		{177147, true},
 	}
 	for _, c := range cases {
-		if got := isPowerOfThree(c.in); got != c.want {
+		if got := isPowerOfThree2(c.in); got != c.want {
 			t.Errorf(
 				"\n input: %d \n got: %t \n want: %t",
 				c.in,
