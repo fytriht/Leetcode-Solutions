@@ -31,12 +31,11 @@ func intersect(nums1, nums2 []int) []int {
 //
 
 func intersect2(nums1, nums2 []int) []int {
-	sort.Slice(nums1, func(i, j int) bool {
-		return nums1[i] < nums1[j]
-	})
-	sort.Slice(nums2, func(i, j int) bool {
-		return nums2[i] < nums2[j]
-	})
+	for _, s := range [][]int{nums1, nums2} {
+		sort.Slice(s, func(i, j int) bool {
+			return s[i] < s[j]
+		})
+	}
 	var ret []int
 	var i, j int
 	for i < len(nums1) && j < len(nums2) {
