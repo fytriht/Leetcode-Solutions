@@ -18,7 +18,7 @@ func TestIntersection(t *testing.T) {
 		{[]int{1, 2, 3, 4}, []int{5, 6, 7, 8}, []int{}},
 	}
 	for _, c := range cases {
-		if got := intersect(c.ina, c.inb); !isShallowEq(got, c.want) {
+		if got := intersect2(c.ina, c.inb); !isShallowEq(got, c.want) {
 			t.Errorf(
 				"\n input: %v, %v \n got: %v \n want: %v",
 				c.ina,
