@@ -4,7 +4,7 @@ package solution
 // solution 1
 //
 
-func findTheDifference(s string, t string) byte {
+func findTheDifference(s, t string) byte {
 	var ret rune
 	for _, r := range t {
 		ret += r
@@ -19,12 +19,9 @@ func findTheDifference(s string, t string) byte {
 // solution 2
 //
 
-func findTheDifference2(s string, t string) byte {
+func findTheDifference2(s, t string) byte {
 	var ret rune
-	for _, r := range t {
-		ret ^= r
-	}
-	for _, r := range s {
+	for _, r := range s + t {
 		ret ^= r
 	}
 	return byte(ret)
