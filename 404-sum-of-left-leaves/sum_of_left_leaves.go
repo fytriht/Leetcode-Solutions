@@ -6,6 +6,10 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+//
+// solution 1
+//
+
 func sumOfLeftLeaves(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -15,4 +19,25 @@ func sumOfLeftLeaves(root *TreeNode) int {
 		return sum + n.Val
 	}
 	return sum
+}
+
+//
+// solution 2
+//
+
+func sumOfLeftLeaves2(root *TreeNode) int {
+	return sumOfLeftLeavesRec(root, false)
+}
+
+func sumOfLeftLeavesRec(root *TreeNode, isLeft bool) int {
+	if root == nil {
+		return 0
+	}
+	if root.Left == nil && root.Right == nil {
+		if isLeft {
+			return root.Val
+		}
+		return 0
+	}
+	return sumOfLeftLeavesRec(root.Left, true) + sumOfLeftLeavesRec(root.Right, false)
 }
