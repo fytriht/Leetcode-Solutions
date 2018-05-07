@@ -5,19 +5,18 @@ import (
 )
 
 func fizzBuzz(n int) []string {
-	ret := make([]string, n+1)
-	for ; n > 0; n-- {
-		c := ""
-		if n%3 == 0 {
-			c += "Fizz"
+	ret := []string{}
+	for i := 1; i <= n; i++ {
+		switch {
+		case i%15 == 0:
+			ret = append(ret, "FizzBuzz")
+		case i%3 == 0:
+			ret = append(ret, "Fizz")
+		case i%5 == 0:
+			ret = append(ret, "Buzz")
+		default:
+			ret = append(ret, strconv.Itoa(i))
 		}
-		if n%5 == 0 {
-			c += "Buzz"
-		}
-		if c == "" {
-			c = strconv.Itoa(n)
-		}
-		ret[n] = c
 	}
-	return ret[1:]
+	return ret
 }
