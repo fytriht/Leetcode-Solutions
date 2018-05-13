@@ -31,6 +31,26 @@ func abs(x int) int {
 //
 
 func findDisappearedNumbers2(nums []int) []int {
+	for i := 0; i < len(nums); i++ {
+		if n := nums[i]; n != nums[n-1] {
+			nums[i], nums[n-1] = nums[n-1], nums[i]
+			i--
+		}
+	}
+	var ret []int
+	for i, n := range nums {
+		if n != i+1 {
+			ret = append(ret, i+1)
+		}
+	}
+	return ret
+}
+
+//
+// solution 3
+//
+
+func findDisappearedNumbers3(nums []int) []int {
 	m := map[int]int{}
 	for i := 1; i <= len(nums); i++ {
 		m[i]++
