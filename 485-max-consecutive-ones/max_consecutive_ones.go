@@ -5,18 +5,15 @@ package solution
 
 func findMaxConsecutiveOnes(nums []int) int {
     var ret, curr int
-    var match bool
     for _, n := range nums {
         if n == 1 {
-            match = true
             curr++
-        } else if match {
-            ret = max(ret, curr)
-            match = false
+        } else {
             curr = 0
         }
+        ret = max(ret, curr)
     }
-    return max(curr, ret)
+    return ret
 }
 
 func max(x, y int) int {
