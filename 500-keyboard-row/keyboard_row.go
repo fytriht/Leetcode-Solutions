@@ -4,7 +4,6 @@ import (
 	"strings"
 )
 
-// TODO: gofmt
 // TODO: test
 
 var r1 = map[byte]bool{
@@ -47,16 +46,16 @@ func findWords(words []string) []string {
 	for _, w := range words {
 		lower := strings.ToLower(w)
 
-		var r string
+		var r map[byte]bool
 		switch {
 		case r1[lower[0]]:
 			r = r1
-		case r2[lower[0]]::
+		case r2[lower[0]]:
 			r = r2
-		case r3[lower[0]]::
+		case r3[lower[0]]:
 			r = r3
 		}
-		
+
 		isSameRow := true
 		for _, b := range lower {
 			if !r[byte(b)] {
@@ -68,6 +67,6 @@ func findWords(words []string) []string {
 			ret = append(ret, w)
 		}
 	}
-	
+
 	return ret
 }
