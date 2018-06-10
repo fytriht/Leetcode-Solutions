@@ -6,6 +6,10 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+//
+// solution 1
+//
+
 func findTilt(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -20,6 +24,31 @@ func calcSum(node *TreeNode) int {
 		return 0
 	}
 	return node.Val + calcSum(node.Left) + calcSum(node.Right)
+}
+
+//
+// solution 2
+//
+
+func findTilt2(root *TreeNode) int {
+	var sum int
+	if root == nil {
+		return sum
+	}
+
+	var postorder func(*TreeNode) int
+	postorder = func(node *TreeNode) int {
+		if node == nil {
+			return 0
+		}
+		left := postorder(node.Left)
+		right := postorder(node.Right)
+		sum += abs(left - right)
+		return left + right + node.Val
+	}
+
+	postorder(root)
+	return sum
 }
 
 func abs(x int) int {
