@@ -7,8 +7,8 @@ type TreeNode struct {
 }
 
 func isSubtree(s *TreeNode, t *TreeNode) bool {
-	if s == nil || t == nil {
-		return s == nil && t == nil
+	if s == nil {
+		return false
 	}
 	return hasSameStructure(s, t) || isSubtree(s.Left, t) || isSubtree(s.Right, t)
 }
