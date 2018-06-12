@@ -8,11 +8,10 @@ func findLHS(nums []int) int {
 
 	var ret int
 	for k := range m {
-		if m[k+1] != 0 {
-			ret = max(ret, m[k]+m[k+1])
-		}
-		if m[k-1] != 0 {
-			ret = max(ret, m[k]+m[k-1])
+		for _, diff := range []int{-1, 1} {
+			if m[k+diff] != 0 {
+				ret = max(ret, m[k]+m[k+diff])
+			}
 		}
 	}
 	return ret
