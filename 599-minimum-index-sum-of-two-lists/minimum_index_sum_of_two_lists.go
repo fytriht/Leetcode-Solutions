@@ -16,11 +16,12 @@ func findRestaurant(list1, list2 []string) []string {
 		if _, ok := m[s]; !ok {
 			continue
 		}
-		if sum := i + m[s]; len(ret) == 0 || sum <= idxSum {
-			ret = append(ret, s)
+		if sum := i + m[s]; sum < idxSum {
+			ret = []string{s}
 			idxSum = sum
+		} else if sum == idxSum {
+			ret = append(ret, s)
 		}
-
 	}
 	return ret
 }
