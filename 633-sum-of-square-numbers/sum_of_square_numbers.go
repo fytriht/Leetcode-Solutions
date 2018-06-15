@@ -5,15 +5,9 @@ import (
 )
 
 func judgeSquareSum(c int) bool {
-	m := int(math.Sqrt(float64(c / 2)))
-	left, right := m, m
-	for left >= 0 && right*right <= c {
-		sum := left*left + right*right
-		if sum > c {
-			left--
-		} else if sum < c {
-			right++
-		} else {
+	for i := 0; i*i <= c; i++ {
+		j := int(math.Sqrt(float64(c - i*i)))
+		if i*i+j*j == c {
 			return true
 		}
 	}
