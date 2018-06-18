@@ -8,22 +8,18 @@ type TreeNode struct {
 
 func findTarget(root *TreeNode, k int) bool {
 	m := map[int]bool{}
-	found := false
 
-	var inorder func(*TreeNode)
-	inorder = func(node *TreeNode) {
+	var preorder func(*TreeNode) bool
+	preorder = func(node *TreeNode) bool {
 		if node == nil {
-			return
+			return false
 		}
-		inorder(node.Left)
 		if m[k-node.Val] {
-			found = true
-			return
+			return true
 		}
 		m[node.Val] = true
-		inorder(node.Right)
+		return preorder(node.Left) || preorder(node.Right)
 	}
 
-	inorder(root)
-	return found
+	return preorder(root)
 }
