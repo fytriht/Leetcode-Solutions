@@ -5,15 +5,14 @@ func findLengthOfLCIS(nums []int) int {
 		return 0
 	}
 
-	pre, tmpLen, ret := nums[0], 1, 1
-	for _, n := range nums[1:] {
-		if n > pre {
+	tmpLen, ret := 1, 1
+	for i := 1; i < len(nums); i++ {
+		if nums[i] > nums[i-1] {
 			tmpLen++
 			ret = max(ret, tmpLen)
 		} else {
 			tmpLen = 1
 		}
-		pre = n
 	}
 	return ret
 }
