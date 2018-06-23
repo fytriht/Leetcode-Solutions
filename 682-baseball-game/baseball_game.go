@@ -11,8 +11,7 @@ func calPoints(ops []string) int {
 		var score int
 		switch op {
 		case "+":
-			score += s[len(s)-1]
-			score += s[len(s)-2]
+			score += s[len(s)-1] + s[len(s)-2]
 		case "D":
 			score = 2 * s[len(s)-1]
 		case "C":
