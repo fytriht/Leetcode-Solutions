@@ -1,9 +1,13 @@
 package solution
 
 func findShortestSubArray(nums []int) int {
-	m := map[int]int{}
-	for _, n := range nums {
+	m, minM, maxM := map[int]int{}, map[int]int{}, map[int]int{}
+	for i, n := range nums {
 		m[n]++
+		if _, ok := minM[n]; !ok {
+			minM[n] = i
+		}
+		maxM[n] = i
 	}
 
 	degree, elms := 0, []int{}
@@ -18,12 +22,7 @@ func findShortestSubArray(nums []int) int {
 
 	ret := len(nums)
 	for _, el := range elms {
-		i, j := 0, len(nums)-1
-		for ; nums[i] != el; i++ {
-		}
-		for ; nums[j] != el; j-- {
-		}
-		ret = min(ret, j-i+1)
+		ret = min(ret, maxM[el]-minM[el]+1)
 	}
 	return ret
 }
