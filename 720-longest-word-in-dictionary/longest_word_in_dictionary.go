@@ -6,9 +6,13 @@ import (
 
 func longestWord(words []string) string {
 	q := []string{}
-	m := make(map[string]bool, len(words))
+	m := make(map[int][]string, len(words))
 	for _, w := range words {
-		m[w] = true
+		if _, ok := m[len(w)]; ok {
+			m[len(w)] = append(m[len(w)], w)
+		} else {
+			m[len(w)] = []string{w}
+		}
 		if len(w) == 1 {
 			q = append(q, w)
 		}
@@ -23,8 +27,8 @@ func longestWord(words []string) string {
 		} else {
 			ret = word
 		}
-		for i := 'a'; i <= 'z'; i++ {
-			if w := word + string(i); m[w] {
+		for _, w := range m[len(word)+1] {
+			if w[:len(w)-1] == word {
 				q = append(q, w)
 			}
 		}
