@@ -1,8 +1,13 @@
 package solution
 
 import (
+	"sort"
 	"strings"
 )
+
+//
+// solution 1
+//
 
 func longestWord(words []string) string {
 	q := []string{}
@@ -41,4 +46,25 @@ func minStr(x, y string) string {
 		return x
 	}
 	return y
+}
+
+//
+// solution 1
+//
+
+func longestWord2(words []string) string {
+	sort.Slice(words, func(i, j int) bool {
+		return strings.Compare(words[i], words[j]) < 0
+	})
+	var ret string
+	m := make(map[string]bool, len(words))
+	for _, w := range words {
+		if len(w) == 1 || m[w[:len(w)-1]] {
+			if len(ret) < len(w) {
+				ret = w
+			}
+			m[w] = true
+		}
+	}
+	return ret
 }
