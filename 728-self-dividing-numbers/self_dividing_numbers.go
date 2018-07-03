@@ -2,11 +2,10 @@ package solution
 
 func selfDividingNumbers(left int, right int) []int {
 	ret := []int{}
-	for left <= right {
+	for ; left <= right; left++ {
 		if isSelfDividing(left) {
 			ret = append(ret, left)
 		}
-		left++
 	}
 	return ret
 }
