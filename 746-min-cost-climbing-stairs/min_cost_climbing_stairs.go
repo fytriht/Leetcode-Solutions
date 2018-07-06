@@ -25,6 +25,18 @@ func minCostClimbingStairs2(cost []int) int {
 	return min(dp[len(dp)-1], dp[len(dp)-2])
 }
 
+//
+// solution 2
+//
+
+func minCostClimbingStairs3(cost []int) int {
+	var a, b int
+	for _, c := range cost {
+		a, b = b, c+min(a, b)
+	}
+	return min(a, b)
+}
+
 func min(x, y int) int {
 	if x > y {
 		return y
