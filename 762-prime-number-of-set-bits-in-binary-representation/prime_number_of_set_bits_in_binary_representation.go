@@ -1,6 +1,35 @@
 package solution
 
+//
+// solution 1
+//
+
+var primes = map[int]bool{
+	2:  true,
+	3:  true,
+	5:  true,
+	7:  true,
+	11: true,
+	13: true,
+	17: true,
+	19: true,
+}
+
 func countPrimeSetBits(L int, R int) int {
+	var cnt int
+	for ; L <= R; L++ {
+		if primes[countSetBits(L)] {
+			cnt++
+		}
+	}
+	return cnt
+}
+
+//
+// solution 2
+//
+
+func countPrimeSetBits2(L int, R int) int {
 	var cnt int
 	for ; L <= R; L++ {
 		if isPrime(countSetBits(L)) {
