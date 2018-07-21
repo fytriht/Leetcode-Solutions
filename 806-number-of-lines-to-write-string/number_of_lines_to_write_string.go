@@ -1,16 +1,14 @@
 package solution
 
-var maxWidth = 100
-
 func numberOfLines(widths []int, S string) []int {
-	var lines, lineWidth int
+	ret := []int{1, 0}
 	for _, r := range S {
-		if w := widths[r-'a']; lineWidth+w <= maxWidth {
-			lineWidth += w
-		} else {
-			lines++
-			lineWidth = w
+		w := widths[r-'a']
+		ret[1] += w
+		if ret[1] > 100 {
+			ret[0]++
+			ret[1] = w
 		}
 	}
-	return []int{lines + 1, lineWidth}
+	return ret
 }
