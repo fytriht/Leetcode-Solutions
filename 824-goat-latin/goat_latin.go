@@ -11,11 +11,7 @@ func toGoatLatin(S string) string {
 		if !isVowel(rune(s[0])) {
 			s = s[1:] + string(s[0])
 		}
-		s += "ma"
-		for j := 0; j < i+1; j++ {
-			s += "a"
-		}
-		ret[i] = s
+		ret[i] = s + "ma" + strings.Repeat("a", i+1)
 	}
 	return strings.Join(ret, " ")
 }
