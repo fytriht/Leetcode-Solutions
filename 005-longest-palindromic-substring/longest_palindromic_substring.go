@@ -1,5 +1,7 @@
 package solution
 
+// TODO: https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm
+
 func longestPalindrome(s string) string {
 	dp := make([][]bool, len(s))
 	for i := range dp {
