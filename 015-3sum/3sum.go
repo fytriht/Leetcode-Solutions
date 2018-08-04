@@ -18,11 +18,9 @@ func threeSum(nums []int) [][]int {
 				j++
 			} else {
 				ret = append(ret, []int{nums[i], nums[j], nums[k]})
-				for j++; j < k && nums[j] == nums[j-1]; {
-					j++
+				for j++; j < k && nums[j] == nums[j-1]; j++ {
 				}
-				for k--; j < k && nums[k] == nums[k+1]; {
-					k--
+				for k--; j < k && nums[k] == nums[k+1]; k-- {
 				}
 			}
 		}
