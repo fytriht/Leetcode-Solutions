@@ -5,8 +5,8 @@ import (
 )
 
 func threeSum(nums []int) [][]int {
-	ret := [][]int{}
 	sort.Ints(nums)
+	ret := [][]int{}
 	for i := 0; i < len(nums)-2 && nums[i] <= 0; i++ {
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
