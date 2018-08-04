@@ -11,10 +11,10 @@ func threeSum(nums []int) [][]int {
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
-		for j, k, target := i+1, len(nums)-1, -nums[i]; j < k; {
-			if nums[j]+nums[k] > target {
+		for j, k := i+1, len(nums)-1; j < k; {
+			if s := nums[i] + nums[j] + nums[k]; s > 0 {
 				k--
-			} else if nums[j]+nums[k] < target {
+			} else if s < 0 {
 				j++
 			} else {
 				ret = append(ret, []int{nums[i], nums[j], nums[k]})
