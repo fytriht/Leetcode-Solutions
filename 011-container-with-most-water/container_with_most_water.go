@@ -3,11 +3,13 @@ package solution
 func maxArea(height []int) int {
 	ret := 0
 	for i, j := 0, len(height)-1; i < j; {
-		ret = max(ret, min(height[i], height[j])*(j-i))
-		if height[i] > height[j] {
-			j--
-		} else {
+		h := min(height[i], height[j])
+		ret = max(ret, h*(j-i))
+		for i < j && height[i] == h {
 			i++
+		}
+		for i < j && height[j] == h {
+			j--
 		}
 	}
 	return ret
