@@ -5,6 +5,10 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//
+// solution 1
+//
+
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	st := []*ListNode{}
 	for n := head; n != nil; {
@@ -18,5 +22,25 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 	node := st[idx]
 	node.Next = node.Next.Next
+	return head
+}
+
+//
+// solution 2
+//
+
+func removeNthFromEnd2(head *ListNode, n int) *ListNode {
+	fast, slow := head, head
+	for ; n > 0; n-- {
+		fast = fast.Next
+	}
+	if fast == nil {
+		return head.Next
+	}
+	for fast.Next != nil {
+		fast = fast.Next
+		slow = slow.Next
+	}
+	slow.Next = slow.Next.Next
 	return head
 }
